@@ -10,11 +10,14 @@
   ```
 
 3. create a new user for Docker management and add him to Docker (default) group
-```sh
 useradd dockeradmin
 passwd dockeradmin
 usermod -aG docker dockeradmin
-```
+
+4. Enable passwd based authentication :
+    vi /etc/ssh/sshd_config
+5. Restart SSHd
+    service sshd restart
 
 4. Write a Docker file under /opt/docker
 
